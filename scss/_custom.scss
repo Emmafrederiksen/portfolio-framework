@@ -1,0 +1,615 @@
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background: #3A0606; /* fallback farve */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: 
+      radial-gradient(circle at 10% 20%, #620909 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, #3A0606 0%, transparent 50%),
+      linear-gradient(135deg, #530909 10%, #620909 60%, #3A0606 100%);
+
+  background-size: 300% 300%, 300% 300%, 200% 200%;
+  background-position: 0% 0%, 100% 100%, 0% 0%;
+  animation: backgroundMove 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 0%, 100% 100%, 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%, 0% 0%, 0% 0%;
+    }
+}
+
+
+
+// -----------------------------
+
+
+// -----------------------------
+// Contact button NavBar
+// -----------------------------
+
+.btn-contact {
+  background: radial-gradient(
+    circle at 30% 30%,
+    $btn-contact-start 0%,
+    $btn-contact-mid 51%,
+    $btn-contact-end 100%
+  );
+
+  color: $brand-surface-light;
+
+  transition: all 0.3s ease;
+}
+
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+}
+
+// -----------------------------
+
+
+// -----------------------------
+// NavBar links
+// -----------------------------
+
+.nav-underline .nav-link {
+  color: $brand-text-main;
+  transition: border-color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.nav-underline .nav-link.active {
+  border-bottom-color: $brand-text-main;
+  font-weight: 600;
+}
+
+.nav-underline .nav-link:hover {
+  color: $brand-text-main;
+}
+
+// -----------------------------
+
+
+// -----------------------------
+// NavBar burgermenu
+// -----------------------------
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(81, 8, 8, 0.3);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(61%) saturate(1435%) hue-rotate(346deg) brightness(93%) contrast(95%);
+}
+
+// -----------------------------
+
+
+
+// -----------------------------
+// NavBar animation
+// -----------------------------
+
+.nav-reveal {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes navReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -----------------------------
+
+
+// ----------------------------------
+// Hero på forside.html - typografi
+// ---------------------------------
+
+.hero-display-xl {
+  font-family: $headings-font-family;
+  font-size: clamp(2.5rem, 6vw, 7rem);
+  line-height: 1.1;
+  font-weight: 500;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-display-lg {
+  font-family: $headings-font-family;
+  font-size: clamp(2rem, 5vw, 6rem);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.hero-reveal {
+  opacity: 0;
+    transform: translate(40px);
+    animation: heroReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -----------------------------
+
+// -----------------------------
+// PROJECT CARDS
+// -----------------------------
+
+.project-card {
+  background: $card-bg;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  color: $light;
+}
+
+
+.project-card--preview {
+  min-height: 120px;
+
+  @include media-breakpoint-up(md) {
+    min-height: 150px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: 200px;
+  }
+}
+
+.project-card--feature {
+  min-height: 200px;
+
+  @include media-breakpoint-up(md) {
+    min-height: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: 300px;
+  }
+}
+
+.project-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background-color: $primary;
+  color: $light;
+
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.project-card:hover .project-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  background-color: $light;
+  color: $primary;
+}
+
+.see-projects-link {
+  top: -20px;     // hæver den over kortene
+  right: 0;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.see-projects-link:hover {
+  opacity: 0.8;
+}
+
+
+// -----------------------------
+
+
+// -----------------------------
+// Slide fra venstre
+// -----------------------------
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ----------------------- */
+
+// -----------------------------
+// Slide up – projekter
+// -----------------------------
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------- */ 
+
+// -----------------------------
+// Footer
+// -----------------------------
+
+.footer-wrapper {
+  background-color: $footer;
+  color: $brand-surface-light;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: $brand-surface-light;
+  font-family: $headings-font-family;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+/* ----------------------- */ 
+
+
+// -----------------------------
+// Kontakt.html -> links
+// -----------------------------
+
+.contact-title {
+  font-family: $headings-font-family;
+  font-size: 1.75rem;
+  color: $light;
+  margin-bottom: .25rem;
+}
+
+.contact-link {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: all .3s ease;
+
+  &:hover {
+    color: $brand-surface-light;
+    border-bottom-color: $brand-surface-light;
+  }
+}
+
+/* ----------------------- */ 
+
+
+// -----------------------------
+// OM MIG NAV
+// -----------------------------
+
+.about-nav .nav-link {
+  background: $card-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: $light;
+
+  padding: 0.9rem 1.3rem;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  transition: all .3s ease;
+
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem); // clamp(MIN, PREFERRED, MAX)
+}
+
+@include media-breakpoint-down(xl) {
+  .about-nav .nav-link {
+    padding: 0.40rem 1.6rem;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .about-nav .nav-link {
+    padding: 0.70rem 1.4rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .about-nav .nav-link {
+    padding: 0.50rem 1.1rem;
+  }
+}
+
+
+.about-nav .nav-link:hover {
+  background: $brand-surface-light;
+  color: $primary;
+  border: 1px solid $brand-surface-light;
+  transform: translateY(-4px);
+}
+
+.about-nav .nav-link.active {
+  background: $light;
+  color: $primary;
+  border: 1px solid $brand-surface-light;
+  transform: translateY(-4px);
+}
+
+.about-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background-color: $primary;
+  color: $light;
+
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* desktop */
+@include media-breakpoint-down(xl) {
+  .about-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet */
+@include media-breakpoint-down(lg) {
+  .about-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobil */
+@include media-breakpoint-down(md) {
+  .about-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+.about-nav:hover .nav-link:hover .about-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.about-nav .nav-link.active .about-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+
+.about-content {
+  background: $light;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: $primary;
+  line-height: 1.7;
+}
+
+.about-mobile-btn {
+  background: $card-bg !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: $light !important;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.about-mobile-btn:not(.collapsed) .about-arrow {
+  transform: rotate(90deg);
+}
+
+/* ----------------------- */ 
+
+// -----------------------------
+// Scroll indicator animation
+// -----------------------------
+
+.scroll-indicator {
+  margin-top: 2rem;
+  font-size: 2rem;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes scrollBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);   
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ 
+
+// -----------------------------
+// Projekt side – Projektets idé
+// -----------------------------
+
+.project-questions {
+  margin-top: 3rem;
+}
+
+.question-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.question-number {
+  font-family: $headings-font-family;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 500;
+  opacity: 0.50;  
+  line-height: 1;
+}
+
+.question-item p {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+.project-section-title {
+  font-family: $headings-font-family;
+  font-size: clamp(1.8rem, 4vw, 3.5rem); // clamp(MIN, PREFERRED, MAX)
+  margin-bottom: 3rem;
+}
+
+.project-idea-card {
+  background: $light; 
+  color: $primary;
+  line-height: 1.5;
+  backdrop-filter: blur(12px);
+}
+
+.project-idea-card::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: $primary;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.idea-lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+
+// -----------------------------
+// Projekt side – BilledeStack
+// -----------------------------
+
+.project-showcase {
+  position: relative;
+  width: clamp(220px, 24vw, 320px);
+  aspect-ratio: 9 / 16;
+}
+
+/* Main */
+.showcase-main {
+  position: relative;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  z-index: 3;
+}
+
+/* Secondary */
+.showcase-secondary {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  z-index: 2;
+  opacity: 0.95;
+}
+
+/* Third */
+.showcase-third {
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  z-index: 1;
+  opacity: 0.85;
+}

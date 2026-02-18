@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <title>Portfolio – Emma Øhlers Frederiksen</title> 
+    
+  </head>
+
+<body>
+
+<!-- Navbar -->   
+<nav class="navbar navbar-expand-lg px-lg-5 px-md-4 px-sm-4 px-3 nav-reveal">
+  <div class="container-fluid navbar-wrapper shadow-sm rounded-5 bg-light mt-4 px-3 py-2">
+
+    <a class="navbar-brand fw-semibold fs-4 text-primary" href="/landing.html">
+      Portfolio
+    </a>
+
+    <button class="navbar-toggler ms-auto border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
+      <div class="navbar-nav nav-underline align-items-lg-center gap-lg-4 gap-2">
+
+        <a class="nav-link fs-5" href="/bootstrap/forside.html">Forside</a>
+        <a class="nav-link fs-5" href="/bootstrap/projekter.html">Projekter</a>
+        <a class="nav-link active fs-5 text-primary" href="/bootstrap/om-mig.html" aria-current="page">Om mig</a>
+
+        <a class="btn btn-contact text-light rounded-5 px-4 fs-5 border-0 ms-lg-3 mt-2 mt-lg-0" href="/bootstrap/kontakt.html">
+          Kontakt
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<main>
+
+<!-- HERO -->
+<section class="container-fluid mt-md-5 mt-4 pt-5 px-lg-5 px-sm-4 px-3">
+    
+  <div class="hero-reveal">
+
+    <h1 class="hero-display-lg text-headings-color mb-0">
+      Om mig
+    </h1>
+
+    <h2 class="hero-display-xl text-light mb-0">
+      Emma Øhlers Frederiksen
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- Billede – accordion -->
+<section class="container-fluid px-lg-5 px-sm-4 px-3 mt-5 pt-5">
+
+  <div class="row align-items-start g-5">
+
+    <!-- BILLEDE -->
+    <div class="col-12 col-md-12 col-lg-3 col-xl-3 slide-left">
+
+      <div class="position-relative about-image-wrapper">
+        <div class="about-image-bg rounded-4"></div>
+
+        <img src="../assets/images/profilbillede.webp"
+             class="img-fluid rounded-4 position-relative shadow"
+             alt="Emma">
+      </div>
+
+    </div>
+
+
+    <!-- KNAPPER -->
+<div class="col-12 col-md-6 col-lg-4 col-xl-4 slide-up">
+
+  <!-- Mobil accordion -->
+  <div class="accordion d-md-none" id="aboutAccordion">
+
+    <!-- Om mig -->
+    <div class="accordion-item bg-transparent border-0 mb-3">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed about-mobile-btn rounded-5 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout">
+          <span>Om mig</span>
+
+          <span class="about-arrow d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </button>
+
+      </h2>
+      <div id="collapseAbout" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+        <div class="accordion-body about-content rounded-5 mt-2">
+          Mit navn er Emma, og jeg studerer webudvikling på 6. semester på Zealand – Sjællands Erhvervsakademi.
+          Jeg motiveres af at skabe digitale løsninger, der både er strukturerede, gennemtænkte og brugervenlige. 
+          For mig handler udvikling ikke kun om at få noget til at fungere, men om at forstå, hvordan og hvorfor det fungerer.
+          Jeg er nysgerrig, analytisk og arbejder målrettet med mine projekter. Jeg trives i processen med at optimere, strukturere 
+          og forfine detaljer, indtil helheden giver mening. Uden for studiet finder jeg ro og fokus i træning og løb – noget der 
+          også afspejler min tilgang til udvikling: kontinuitet, disciplin og ønsket om hele tiden at blive bedre.
+        </div>
+      </div>
+    </div>
+
+    <!-- Kompetencer -->
+    <div class="accordion-item bg-transparent border-0 mb-3">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed about-mobile-btn rounded-5 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCompetence">
+          <span>Kompetencer</span>
+
+          <span class="about-arrow d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="collapseCompetence" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+        <div class="accordion-body about-content rounded-5 mt-2">
+          Jeg arbejder med moderne frontend-teknologier som Vue og React, hvor jeg har fokus på komponentbaseret opbygning, state management og brugeroplevelse.
+          På backend-siden arbejder jeg med Node.js og Express samt PHP, hvor jeg udvikler strukturerede og skalerbare løsninger.
+          Derudover har jeg en stærk interesse for databasedesign og arbejder med relationelle databaser i MySQL. Jeg lægger vægt på 
+          korrekt struktur, normalisering og dataintegritet for at sikre stabile og gennemtænkte systemer.
+        </div>
+      </div>
+    </div>
+
+    <!-- Min tilgang -->
+    <div class="accordion-item bg-transparent border-0 mb-3">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed about-mobile-btn rounded-5 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseApproach">
+          <span>Min tilgang</span>
+
+          <span class="about-arrow d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="collapseApproach" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+        <div class="accordion-body about-content rounded-5 mt-2">
+          Når jeg arbejder med et projekt, har jeg fokus på overblik, kvalitet og en tydelig retning i processen.
+          For mig starter et godt projekt med en gennemtænkt arkitektur og en klar forståelse af problemstillingen. 
+          Jeg lægger vægt på, at både kode og database hænger logisk sammen, så løsningen bliver stabil og nem at videreudvikle.
+          Jeg arbejder analytisk og reflekterende og ser optimering som en naturlig del af processen – både teknisk og med brugeren for øje. 
+          Brugeren er altid en vigtig del af mine overvejelser, når jeg udvikler noget. Jeg trives både i teams, hvor sparring og fælles refleksion 
+          styrker resultatet, og i selvstændigt arbejde, hvor jeg tager ansvar for fremdrift og kvalitet. For mig handler udvikling ikke kun om at 
+          få noget til at virke, men om at skabe sammenhæng mellem funktionalitet, teknologi og brugerens behov – og om at forstå helheden fra idé til færdig løsning.
+          Jeg motiveres af at se, hvordan et projekt udvikler sig gennem iteration og refleksion, og hvordan små forbedringer undervejs styrker den samlede løsning.
+        </div>
+      </div>
+    </div>
+
+    <!-- Fokusområder -->
+    <div class="accordion-item bg-transparent border-0 mb-3">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed about-mobile-btn rounded-5 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFocus">
+          <span>Fokusområder</span>
+
+          <span class="about-arrow d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-right"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="collapseFocus" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+        <div class="accordion-body about-content rounded-5 mt-2">
+          Jeg har en særlig interesse for databasedesign og systemarkitektur og fordyber mig gerne i, hvordan data struktureres og anvendes på en meningsfuld måde.
+          Jeg finder det spændende at arbejde i mellem frontend, backend og database, hvor helheden i systemet bliver tydelig. 
+          Fremadrettet ønsker jeg at udvikle mine kompetencer inden for datadrevne løsninger og optimering, hvor analyse og struktur spiller en vigtig rolle.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Desktop tabs (kun knapper) -->
+  <div class="nav flex-column gap-3 about-nav d-none d-md-flex">
+
+    <button class="nav-link rounded-5 active d-flex justify-content-between align-items-center"
+            data-bs-toggle="pill"
+            data-bs-target="#content-about"
+            type="button">
+      <span>Om mig</span>
+      <span class="about-arrow d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-right"></i>
+      </span>
+    </button>
+
+    <button class="nav-link rounded-5 d-flex justify-content-between align-items-center"
+            data-bs-toggle="pill"
+            data-bs-target="#content-competence"
+            type="button">
+      <span>Kompetencer</span>
+      <span class="about-arrow d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-right"></i>
+      </span>
+    </button>
+
+    <button class="nav-link rounded-5 d-flex justify-content-between align-items-center"
+            data-bs-toggle="pill"
+            data-bs-target="#content-approach"
+            type="button">
+      <span>Min tilgang</span>
+      <span class="about-arrow d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-right"></i>
+      </span>
+    </button>
+
+    <button class="nav-link rounded-5 d-flex justify-content-between align-items-center"
+            data-bs-toggle="pill"
+            data-bs-target="#content-focus"
+            type="button">
+      <span>Fokusområder</span>
+      <span class="about-arrow d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-right"></i>
+      </span>
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- Desktop tabs content -->
+<div class="col-12 col-md-6 col-lg-5 col-xl-5 slide-up d-none d-md-block">
+
+  <div class="tab-content">
+
+    <div class="tab-pane fade show active p-4 rounded-5 about-content" id="content-about">
+      Mit navn er Emma, og jeg studerer webudvikling på 6. semester på Zealand – Sjællands Erhvervsakademi.
+      Jeg motiveres af at skabe digitale løsninger, der både er strukturerede, gennemtænkte og brugervenlige. 
+      For mig handler udvikling ikke kun om at få noget til at fungere, men om at forstå, hvordan og hvorfor det fungerer.
+      Jeg er nysgerrig, analytisk og arbejder målrettet med mine projekter. Jeg trives i processen med at optimere, strukturere 
+      og forfine detaljer, indtil helheden giver mening. Uden for studiet finder jeg ro og fokus i træning og løb – noget der 
+      også afspejler min tilgang til udvikling: kontinuitet, disciplin og ønsket om hele tiden at blive bedre.
+    </div>
+
+    <div class="tab-pane fade p-4 rounded-5 about-content" id="content-competence">
+      Jeg arbejder med moderne frontend-teknologier som Vue og React, hvor jeg har fokus på komponentbaseret opbygning, state management og brugeroplevelse.
+      På backend-siden arbejder jeg med Node.js og Express samt PHP, hvor jeg udvikler strukturerede og skalerbare løsninger.
+      Derudover har jeg en stærk interesse for databasedesign og arbejder med relationelle databaser i MySQL. Jeg lægger vægt på 
+      korrekt struktur, normalisering og dataintegritet for at sikre stabile og gennemtænkte systemer.
+    </div>
+
+    <div class="tab-pane fade p-4 rounded-5 about-content" id="content-approach">
+      Når jeg arbejder med et projekt, har jeg fokus på overblik, kvalitet og en tydelig retning i processen.
+      For mig starter et godt projekt med en gennemtænkt arkitektur og en klar forståelse af problemstillingen. 
+      Jeg lægger vægt på, at både kode og database hænger logisk sammen, så løsningen bliver stabil og nem at videreudvikle.
+      Jeg arbejder analytisk og reflekterende og ser optimering som en naturlig del af processen – både teknisk og med brugeren for øje. 
+      Brugeren er altid en vigtig del af mine overvejelser, når jeg udvikler noget. Jeg trives både i teams, hvor sparring og fælles refleksion 
+      styrker resultatet, og i selvstændigt arbejde, hvor jeg tager ansvar for fremdrift og kvalitet. For mig handler udvikling ikke kun om at 
+      få noget til at virke, men om at skabe sammenhæng mellem funktionalitet, teknologi og brugerens behov – og om at forstå helheden fra idé til færdig løsning.
+      Jeg motiveres af at se, hvordan et projekt udvikler sig gennem iteration og refleksion, og hvordan små forbedringer undervejs styrker den samlede løsning.
+    </div>
+
+    <div class="tab-pane fade p-4 rounded-5 about-content" id="content-focus">
+      Jeg har en særlig interesse for databasedesign og systemarkitektur og fordyber mig gerne i, hvordan data struktureres og anvendes på en meningsfuld måde.
+      Jeg finder det spændende at arbejde i mellem frontend, backend og database, hvor helheden i systemet bliver tydelig. 
+      Fremadrettet ønsker jeg at udvikle mine kompetencer inden for datadrevne løsninger og optimering, hvor analyse og struktur spiller en vigtig rolle.
+    </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
+
+
+
+
+</main>
+
+
+<!-- Footer -->
+  <footer class="container-fluid px-lg-5 px-md-4 px-3 mt-4 pt-5 slide-up">
+  <div class="footer-wrapper rounded-top-5 px-4 py-4">
+
+    <div class="row">
+
+      <!-- Venstre -->
+      <div class="col-lg-6 mb-4 mb-lg-0 mb-sm-4">
+        <ul class="list-unstyled footer-nav d-flex flex-column gap-2">
+          <li><a href="/bootstrap/forside.html" class="footer-link fs-3">Forside</a></li>
+          <li><a href="/bootstrap/projekter.html" class="footer-link fs-3">Projekter</a></li>
+          <li><a href="/bootstrap/om-mig.html" class="footer-link fs-3">Om mig</a></li>
+          <li><a href="/bootstrap/kontakt.html" class="footer-link fs-3">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <!-- Højre -->
+      <div class="col-lg-6 text-lg-end">
+        <div class="footer-contact">
+          <p class="mb-1 fs-5">Kontakt information</p>
+          <p class="mb-3 opacity-75">emmaoef@gmail.com</p>
+
+          <p class="mb-1 fs-5">Bopæl</p>
+          <p class="mb-4 opacity-75">Sjælland, Danmark</p>
+
+          <div class="d-flex gap-3 justify-content-lg-end">
+            <a href="https://www.linkedin.com/in/emma-frederiksen-463639234" target="_blank" rel="noopener noreferrer" class="contact-link fs-5">LinkedIn</a>
+            <a href="https://github.com/Emmafrederiksen" target="_blank" rel="noopener noreferrer" class="contact-link fs-5">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<script>
+
+</script>
+  
