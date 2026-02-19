@@ -1,0 +1,19 @@
+.scroll-indicator {
+  margin-top: 2rem;
+  font-size: 2rem;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes scrollBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);   
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ 

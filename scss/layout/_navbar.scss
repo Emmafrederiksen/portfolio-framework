@@ -1,0 +1,89 @@
+
+
+// -----------------------------
+// Contact button NavBar
+// -----------------------------
+
+.btn-contact {
+  background: radial-gradient(
+    circle at 30% 30%,
+    $btn-contact-start 0%,
+    $btn-contact-mid 51%,
+    $btn-contact-end 100%
+  );
+
+  color: $brand-surface-light;
+
+  transition: all 0.3s ease;
+}
+
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+}
+
+// -----------------------------
+
+
+// -----------------------------
+// NavBar links
+// -----------------------------
+
+.nav-underline .nav-link {
+  color: $brand-text-main;
+  transition: border-color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.nav-underline .nav-link.active {
+  border-bottom-color: $brand-text-main;
+  font-weight: 600;
+}
+
+.nav-underline .nav-link:hover {
+  color: $brand-text-main;
+}
+
+// -----------------------------
+
+
+// -----------------------------
+// NavBar burgermenu
+// -----------------------------
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(81, 8, 8, 0.3);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(61%) saturate(1435%) hue-rotate(346deg) brightness(93%) contrast(95%);
+}
+
+// -----------------------------
+
+
+
+// -----------------------------
+// NavBar animation
+// -----------------------------
+
+.nav-reveal {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes navReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -----------------------------

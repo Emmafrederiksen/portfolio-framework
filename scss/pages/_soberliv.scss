@@ -1,0 +1,49 @@
+#project-idea {
+
+  .project-questions {
+    margin-top: 3rem;
+
+    .question-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      .question-number {
+        font-family: $headings-font-family;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 500;
+        opacity: 0.5;
+        line-height: 1;
+      }
+
+      p {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+
+  .project-idea-card {
+    background: $light;
+    color: $primary;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: $primary;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .idea-lead {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

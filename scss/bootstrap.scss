@@ -2,3 +2,22 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "custom";
 
+
+/* Components */
+@import "components/hero";
+@import "components/project-card";
+@import "components/animations";
+@import "components/scroll-indicator";
+@import "components/picture-stack";
+
+
+/* Layout */
+@import "layout/base";
+@import "layout/navbar";
+@import "layout/footer";
+
+
+/* Pages */
+@import "pages/om-mig";
+@import "pages/kontakt";
+@import "pages/soberliv";
