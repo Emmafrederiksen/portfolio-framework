@@ -11890,7 +11890,19 @@ textarea.form-control-lg {
     transform: translateY(0);
   }
 }
-.project-card {
+.projects-section .project-info p {
+  margin-bottom: 0.5rem;
+}
+.projects-section .see-projects-link {
+  top: -20px;
+  right: 0;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+.projects-section .see-projects-link:hover {
+  opacity: 0.8;
+}
+.projects-section .project-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -11899,36 +11911,43 @@ textarea.form-control-lg {
   flex-direction: column;
   color: #FFF6E3;
 }
-
-.project-card--preview {
+.projects-section .project-card--preview {
   min-height: 120px;
 }
 @media (min-width: 768px) {
-  .project-card--preview {
+  .projects-section .project-card--preview {
     min-height: 150px;
   }
 }
 @media (min-width: 992px) {
-  .project-card--preview {
+  .projects-section .project-card--preview {
     min-height: 200px;
   }
 }
-
-.project-card--feature {
+.projects-section .project-card--feature {
   min-height: 200px;
 }
 @media (min-width: 768px) {
-  .project-card--feature {
+  .projects-section .project-card--feature {
     min-height: 300px;
   }
 }
 @media (min-width: 992px) {
-  .project-card--feature {
+  .projects-section .project-card--feature {
     min-height: 300px;
   }
 }
-
-.project-arrow {
+.projects-section .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  background-color: #FFF6E3;
+  color: #510808;
+}
+.projects-section .project-card:hover .project-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+.projects-section .project-arrow {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -11937,29 +11956,6 @@ textarea.form-control-lg {
   font-size: 1.2rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.project-card:hover .project-arrow {
-  transform: translateY(-3px) rotate(-25deg);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  background-color: #FFF6E3;
-  color: #510808;
-}
-
-.see-projects-link {
-  top: -20px;
-  right: 0;
-  transition: opacity 0.3s ease;
-  text-decoration: none;
-}
-
-.see-projects-link:hover {
-  opacity: 0.8;
 }
 
 .slide-left {
