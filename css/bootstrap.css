@@ -12097,6 +12097,31 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.scroll-text-section {
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scrollLoop 60s linear infinite;
+  will-change: transform;
+}
+
+.scroll-content {
+  white-space: nowrap;
+  padding-right: 2rem;
+  color: rgba(47, 0, 0, 0.5);
+}
+
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 /* Layout */
 html, body {
   height: 100%;
