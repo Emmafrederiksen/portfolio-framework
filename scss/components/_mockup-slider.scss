@@ -9,7 +9,6 @@
   }
 
   .mockup-img {
-    height: 490px;
     border-radius: 1.5rem;
     transition: transform 0.3s ease;
   }
@@ -20,13 +19,7 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    .mockup-img {
-      height: 430px;
-    }
+    color: $light;
   }
 
   .swiper-pagination {

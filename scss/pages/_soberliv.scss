@@ -1,49 +1,61 @@
-#project-idea {
+.project-idea-section {
 
-  .project-questions {
-    margin-top: 3rem;
+  margin-top: 4rem;
 
-    .question-item {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+  .container {
+    max-width: 700px;
+  }
 
-      .question-number {
-        font-family: $headings-font-family;
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        font-weight: 500;
-        opacity: 0.5;
-        line-height: 1;
-      }
+  .idea-divider {
+    width: 50px;
+    height: 3px;
+    background: $primary;
+    border-radius: 2px;
+  }
 
-      p {
-        font-size: clamp(1.5rem, 2.5vw, 2rem);
-        font-weight: 500;
-        margin: 0;
-      }
+}
+
+// Designvalg
+.design-case {
+
+  .case-img {
+    
+    border-radius: 2rem;
+    @include shadow(20px, 40px, 0.3);
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
     }
   }
 
-  .project-idea-card {
-    background: $light;
-    color: $primary;
-    line-height: 1.5;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 4px;
-      background: $primary;
-      border-radius: 2px;
-      margin-bottom: 1.5rem;
+  @media (max-width: 576px) {
+    .case-img {
+      width: 220px;
     }
+  }
 
-    .idea-lead {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
+}
+
+
+
+.project-divider {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Desktop → lodret */
+@media (min-width: 992px) {
+  .project-divider {
+    width: 1px;
+    height: 100%;
+  }
+}
+
+/* Mobil → vandret */
+@media (max-width: 991px) {
+  .project-divider {
+    width: 100%;
+    height: 1px;
+    margin: 1.5rem 0;
   }
 }

@@ -1,0 +1,20 @@
+.numbered-heading {
+
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+
+  .number {
+    font-family: $headings-font-family;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 500;
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 500;
+    margin: 0;
+  }
+}

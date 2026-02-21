@@ -12014,13 +12014,14 @@ textarea.form-control-lg {
 .project-showcase .showcase-main {
   position: relative;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  z-index: 3;
+  z-index: 1;
+  opacity: 0.85;
 }
 .project-showcase .showcase-secondary {
   position: absolute;
   top: 8%;
   left: 0;
-  transform: translateX(30%);
+  transform: translateX(40%);
   z-index: 2;
   opacity: 0.95;
 }
@@ -12028,9 +12029,8 @@ textarea.form-control-lg {
   position: absolute;
   top: 16%;
   left: 0;
-  transform: translateX(60%);
-  z-index: 1;
-  opacity: 0.85;
+  transform: translateX(80%);
+  z-index: 3;
 }
 .project-showcase {
   /* Tablet */
@@ -12038,24 +12038,33 @@ textarea.form-control-lg {
 @media (min-width: 768px) and (max-width: 991px) {
   .project-showcase .showcase-secondary {
     left: 0;
-    transform: translateX(20%);
+    transform: translateX(30%);
   }
   .project-showcase .showcase-third {
     left: 0;
-    transform: translateX(40%);
+    transform: translateX(60%);
   }
-}
-.project-showcase {
-  /* Mobil */
 }
 @media (max-width: 767px) {
+  .project-showcase .project-showcase {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .project-showcase .showcase-main {
+    position: relative;
+    z-index: 1;
+  }
   .project-showcase .showcase-secondary {
-    left: 25%;
-    transform: none;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-20%);
+    z-index: 2;
   }
   .project-showcase .showcase-third {
+    top: 12%;
     left: 50%;
-    transform: none;
+    transform: translateX(20%);
+    z-index: 3;
   }
 }
 
@@ -12066,7 +12075,6 @@ textarea.form-control-lg {
   width: auto;
 }
 .mockup-slider .mockup-img {
-  height: 490px;
   border-radius: 1.5rem;
   transition: transform 0.3s ease;
 }
@@ -12075,12 +12083,7 @@ textarea.form-control-lg {
 }
 .mockup-slider .swiper-button-prev,
 .mockup-slider .swiper-button-next {
-  color: white;
-}
-@media (max-width: 768px) {
-  .mockup-slider .mockup-img {
-    height: 430px;
-  }
+  color: #FFF6E3;
 }
 .mockup-slider .swiper-pagination {
   margin-top: 2.5rem;
@@ -12122,6 +12125,24 @@ textarea.form-control-lg {
     transform: translateX(-50%);
   }
 }
+.numbered-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+.numbered-heading .number {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 500;
+  opacity: 0.5;
+  line-height: 1;
+}
+.numbered-heading .title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  margin: 0;
+}
+
 /* Layout */
 html, body {
   height: 100%;
@@ -12363,45 +12384,51 @@ body::before {
   border-bottom-color: #FFF6E3;
 }
 
-#project-idea .project-questions {
-  margin-top: 3rem;
+.project-idea-section {
+  margin-top: 4rem;
 }
-#project-idea .project-questions .question-item {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+.project-idea-section .container {
+  max-width: 700px;
 }
-#project-idea .project-questions .question-item .question-number {
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 500;
-  opacity: 0.5;
-  line-height: 1;
-}
-#project-idea .project-questions .question-item p {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 500;
-  margin: 0;
-}
-#project-idea .project-idea-card {
-  background: #FFF6E3;
-  color: #510808;
-  line-height: 1.5;
-}
-#project-idea .project-idea-card::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 4px;
+.project-idea-section .idea-divider {
+  width: 50px;
+  height: 3px;
   background: #510808;
   border-radius: 2px;
-  margin-bottom: 1.5rem;
 }
-#project-idea .project-idea-card .idea-lead {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+
+.design-case .case-img {
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+.design-case .case-img:hover {
+  transform: translateY(-6px);
+}
+@media (max-width: 576px) {
+  .design-case .case-img {
+    width: 220px;
+  }
+}
+
+.project-divider {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Desktop → lodret */
+@media (min-width: 992px) {
+  .project-divider {
+    width: 1px;
+    height: 100%;
+  }
+}
+/* Mobil → vandret */
+@media (max-width: 991px) {
+  .project-divider {
+    width: 100%;
+    height: 1px;
+    margin: 1.5rem 0;
+  }
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
