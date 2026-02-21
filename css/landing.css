@@ -22,7 +22,7 @@
 .hero-name {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 6vw, 7rem);
-    line-height: 1.2;
+    line-height: 1.1;
     font-weight: 500;
     color: #FFF6E3;
     text-shadow: 
@@ -34,21 +34,31 @@
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 6rem); /* clamp = (MINIMUM, PREFERRED, MAXIMUM) */
     font-weight: 500;
+    line-height: 1.2;
     color: #2F0000;
+    margin: 0;
 }
 
 .landing {
     min-height: 100vh;
-    padding: 3rem 6rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    justify-content: space-between;  
+    gap: 0;
 }
+
 
 .hero-bottom {
     text-align: center;
-    max-width: auto;
-    margin: 0 auto 7rem auto;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: clamp(1rem, 3vw, 4rem);
+    
     animation: fadeUp 1.2s ease forwards;
     opacity: 0;
     transform: translateY(20px);
@@ -63,9 +73,9 @@
 
 .hero-description {
     font-family: var(--font-display);
-    font-size: 1.625rem; /* = 26 px*/ 
-    line-height: 1.9rem;
-    margin: 2.5rem auto 2rem auto;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.5;
+    margin: clamp(1rem, 2vw, 1.8rem) auto;
     max-width: auto;
     font-weight: 400;   
     color:#FFF6E3
@@ -73,9 +83,11 @@
 
 .hero-sub {
     font-family: var(--font-text);
-    font-size: 1.125rem; /* = 18 px */
+    font-size: clamp(0.95rem, 1.2vw, 1.125rem);
+    line-height: 1.6;
     opacity: 0.8;
-    max-width: 800px;
+    max-width: 650px;
+    margin: 0 auto;
     color:#FFF6E3
 }
 
@@ -113,11 +125,12 @@ body {
 /* Landingsside knapper */
 
 .framework-buttons {
-    margin-top: 2.1rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.8rem, 2vw, 2rem);
+    flex-wrap: wrap;
     font-family: var(--font-text);
 }
 
@@ -169,11 +182,26 @@ body {
 
 
 
+@media (max-width: 768px) {
+  .landing {
+    padding: 2rem;
+  }
+
+  .framework-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .framework-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
 /* ----------------------------------------------------------------------------------- */
 
-
-/*  */
-
-
-/* ----------------------------------------------------------------------------------- */
 
