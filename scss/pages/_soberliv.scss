@@ -1,0 +1,61 @@
+.project-idea-section {
+
+  margin-top: 4rem;
+
+  .container {
+    max-width: 700px;
+  }
+
+  .idea-divider {
+    width: 50px;
+    height: 3px;
+    background: $primary;
+    border-radius: 2px;
+  }
+
+}
+
+// Designvalg
+.design-case {
+
+  .case-img {
+    
+    border-radius: 2rem;
+    @include shadow(20px, 40px, 0.3);
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .case-img {
+      width: 220px;
+    }
+  }
+
+}
+
+
+
+.project-divider {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Desktop → lodret */
+@media (min-width: 992px) {
+  .project-divider {
+    width: 1px;
+    height: 100%;
+  }
+}
+
+/* Mobil → vandret */
+@media (max-width: 991px) {
+  .project-divider {
+    width: 100%;
+    height: 1px;
+    margin: 1.5rem 0;
+  }
+}

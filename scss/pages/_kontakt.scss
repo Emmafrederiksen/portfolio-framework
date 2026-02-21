@@ -1,0 +1,21 @@
+.contact-title {
+  font-family: $headings-font-family;
+  font-size: 1.75rem;
+  color: $light;
+  margin-bottom: .25rem;
+}
+
+.contact-link {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: all .3s ease;
+
+  &:hover {
+    color: $brand-surface-light;
+    border-bottom-color: $brand-surface-light;
+  }
+}

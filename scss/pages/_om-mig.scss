@@ -1,0 +1,130 @@
+.about-nav .nav-link {
+  background: $card-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: $light;
+
+  padding: 0.9rem 1.3rem;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  transition: all .3s ease;
+
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem); // clamp(MIN, PREFERRED, MAX)
+}
+
+@include media-breakpoint-down(xl) {
+  .about-nav .nav-link {
+    padding: 0.40rem 1.6rem;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .about-nav .nav-link {
+    padding: 0.70rem 1.4rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .about-nav .nav-link {
+    padding: 0.50rem 1.1rem;
+  }
+}
+
+
+.about-nav .nav-link:hover {
+  background: $brand-surface-light;
+  color: $primary;
+  border: 1px solid $brand-surface-light;
+  transform: translateY(-4px);
+}
+
+.about-nav .nav-link.active {
+  background: $light;
+  color: $primary;
+  border: 1px solid $brand-surface-light;
+  transform: translateY(-4px);
+}
+
+.about-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background-color: $primary;
+  color: $light;
+
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* desktop */
+@include media-breakpoint-down(xl) {
+  .about-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet */
+@include media-breakpoint-down(lg) {
+  .about-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobil */
+@include media-breakpoint-down(md) {
+  .about-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+.about-nav:hover .nav-link:hover .about-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.about-nav .nav-link.active .about-arrow {
+  transform: translateY(-3px) rotate(-25deg);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+
+.about-content {
+  background: $light;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: $primary;
+  line-height: 1.7;
+}
+
+.about-mobile-btn {
+  background: $card-bg !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: $light !important;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.about-mobile-btn:not(.collapsed) .about-arrow {
+  transform: rotate(90deg);
+}

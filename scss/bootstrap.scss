@@ -1,0 +1,29 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "custom";
+
+
+/* Abstract */
+@import "abstracts/mixins";
+
+/* Components */
+@import "components/hero";
+@import "components/project-card";
+@import "components/animations";
+@import "components/scroll-indicator";
+@import "components/picture-stack";
+@import "components/mockup-slider";
+@import "components/scroll-text-section";
+@import "components/numbered-heading";
+
+
+/* Layout */
+@import "layout/base";
+@import "layout/navbar";
+@import "layout/footer";
+
+
+/* Pages */
+@import "pages/om-mig";
+@import "pages/kontakt";
+@import "pages/soberliv";

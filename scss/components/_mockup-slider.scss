@@ -1,0 +1,41 @@
+.mockup-slider {
+
+  .swiper {
+    padding: 3rem 0;
+  }
+
+  .swiper-slide {
+    width: auto; 
+  }
+
+  .mockup-img {
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .mockup-img:hover {
+    transform: translateY(-12px);
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $light;
+  }
+
+  .swiper-pagination {
+    margin-top: 2.5rem;
+  }
+
+  .swiper-pagination-bullet {
+    background: rgba(255,255,255,0.5);
+    width: 10px;
+    height: 10px;
+    opacity: 0.6;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,31 @@
+// -----------------------------
+// BRAND COLORS
+// -----------------------------
+
+$brand-surface-light: #FFF6E3;
+$brand-text-main: #510808;
+$brand-text-heading: #2F0000;
+$brand-background-card: rgba(255, 255, 255, 0.08);
+
+// Contact-btn
+$btn-contact-start: #510808;
+$btn-contact-mid: #6E0B0B;
+$btn-contact-end: #B71212;
+
+
+// -----------------------------
+// BOOTSTRAP THEME OVERRIDES
+// -----------------------------
+
+$light: $brand-surface-light;        // lys surface (navbar, cards)
+$primary: $brand-text-main; 
+$headings-color: $brand-text-heading;
+$card-bg: $brand-background-card; 
+$footer: $brand-text-heading;
+
+// -----------------------------
+// TYPOGRAPHY
+// -----------------------------
+
+$font-family-base: 'DM Serif Text', serif;
+$headings-font-family: 'DM Serif Display', serif;
