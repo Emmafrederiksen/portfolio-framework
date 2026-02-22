@@ -1,161 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
 
-    <title>Om mig | Emma Øhlers Frederiksen </title> 
+    <title>Om mig | Emma Øhlers Frederiksen</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-
-    tailwind.config = {
+      tailwind.config = {
         theme: {
-            extend: {
+          extend: {
             fontFamily: {
-                display: ['"DM Serif Display"', 'serif'],
-                text: ['"DM Serif Text"', 'serif'],
+              display: ['"DM Serif Display"', "serif"],
+              text: ['"DM Serif Text"', "serif"],
             },
             colors: {
-                brand: {
-                    primary: '#510808',
-                    accent: '#2F0000',
-                    light: '#FFF6E3',
-                    btnStart: '#510808',
-                    btnMid: '#6E0B0B',
-                    btnEnd: '#B71212'
-                }
-            }
-            }
-        }
-    }
-
+              brand: {
+                primary: "#510808",
+                accent: "#2F0000",
+                light: "#FFF6E3",
+              },
+            },
+          },
+        },
+      };
     </script>
 
-    <style> @keyframes backgroundMove {
+    <style>
+
+     @keyframes backgroundMove {
         0% {
-            background-position: 0% 0%, 100% 100%, 0% 0%;
+          background-position:
+            0% 0%,
+            100% 100%,
+            0% 0%;
         }
         100% {
-            background-position: 100% 100%, 0% 0%, 0% 0%;
+          background-position:
+            100% 100%,
+            0% 0%,
+            0% 0%;
         }
     }
+
+    .rotate-active {
+        transform: rotate(-25deg);
+      }
+
+    .accordion-content {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .accordion-content.open {
+        max-height: 1000px;
+        opacity: 1;
+    }
+
+    .rotate-open {
+        transform: rotate(90deg);
+    }
+
+
     </style>
-    
   </head>
 
-<body>
+  <body>
 
-<div class="fixed inset-0 -z-10 
-            bg-[radial-gradient(circle_at_10%_20%,#620909_0%,transparent_50%),radial-gradient(circle_at_50%_80%,#3A0606_0%,transparent_50%),linear-gradient(135deg,#530909_10%,#620909_60%,#3A0606_100%)]
-            bg-[length:300%_300%,300%_300%,200%_200%]
-            animate-[backgroundMove_5s_ease-in-out_infinite_alternate]">
-</div>  
+    <!-- Background -->
+    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_10%_20%,#620909_0%,transparent_50%),radial-gradient(circle_at_50%_80%,#3A0606_0%,transparent_50%),linear-gradient(135deg,#530909_10%,#620909_60%,#3A0606_100%)] bg-[length:300%_300%,300%_300%,200%_200%] animate-[backgroundMove_5s_ease-in-out_infinite_alternate]"></div>
 
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between mt-6 mx-6 md:mx-12 px-6 py-4 bg-brand-light rounded-[40px] shadow-md">
+      <a href="../index.html" class="font-display font-semibold text-2xl md:text-3xl xl:text-4xl text-brand-primary">Portfolio</a>
 
-<!-- Navbar -->    
-<nav class="flex items-center justify-between mt-6 mx-6 md:mx-12 px-6 py-4 md:py-4 bg-brand-light rounded-[40px] shadow-md">
+      <div class="hidden lg:flex items-center gap-6 lg:gap-10 font-text text-lg lg:text-xl xl:text-2xl">
+        <a href="forside.html" class="text-brand-primary">Forside</a>
+        <a href="projekter.html" class="text-brand-primary">Projekter</a>
+        <a href="om-mig.html" class="relative text-brand-primary font-semibold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-brand-primary">Om mig</a>
+        <a href="kontakt.html" class="px-6 py-2 rounded-full text-brand-light bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]">Kontakt</a>
+      </div>
 
-  <!-- Logo -->
-  <a href="../index.html" class="font-display font-semibold text-2xl md:text-3xl xl:text-4xl text-brand-primary">Portfolio</a>
+      <button id="menu-btn" class="md:hidden text-2xl text-brand-primary">☰</button>
+    </nav>
 
-  <!-- Desktop menu -->
-  <div class="hidden md:flex items-center gap-6 lg:gap-10 font-text text-lg lg:text-xl xl:text-2xl">
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden flex-col rounded-[40px] gap-6 mx-6 md:mx-12 mt-4 px-6 py-8 md:hidden font-text text-lg bg-brand-light">
+      <a href="forside.html">Forside</a>
+      <a href="projekter.html">Projekter</a>
+      <a href="om-mig.html" class="font-semibold border-b border-brand-primary pb-1">Om mig</a>
+      <a href="kontakt.html" class="px-6 py-2 rounded-full text-center text-brand-light bg-brand-primary">Kontakt</a>
+    </div>
 
-    <a href="forside.html" class="text-brand-primary transition">Forside</a>
+    <main class="mt-10 md:mt-16 px-6 md:px-12">
+      <!-- HERO -->
+      <section class="pt-10">
+        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl text-brand-accent">Om mig</h1>
+        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-brand-light mt-2">Emma Øhlers Frederiksen</h2>
+      </section>
 
-    <a href="projekter.html" class="text-brand-primary transition">Projekter</a>
+      <!-- GRID -->
+      <section class="mt-24 mb-24">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+            
+          <!-- IMAGE -->
+          <div class="lg:col-span-3">
+            <div class="relative">
+              <div class="absolute inset-0 bg-brand-accent rounded-2xl translate-x-4 translate-y-4"></div>
+              <img src="../assets/images/profilbillede.webp" alt="Emma" class="relative rounded-2xl shadow-xl w-full object-cover"/>
+            </div>
+          </div>
 
-    <a href="om-mig.html" class="relative text-brand-primary font-semibold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-brand-primary">Om mig</a>
+          <div class="accordion-item">
 
-    <a href="kontakt.html" class="px-4 md:px-6 py-2 rounded-full text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
-        transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.10)]">
-        Kontakt
-    </a>
+  <button
+    class="accordion-btn group relative w-full flex items-center justify-between
+           rounded-full px-8 py-5
+           bg-white/10 backdrop-blur-md border border-white/20
+           text-brand-light font-display text-xl"
+    data-target="about-mobile"
+  >
+    <span>Om mig</span>
 
+    <div class="arrow transition-transform duration-300 w-10 h-10 rounded-full
+                bg-brand-primary text-brand-light
+                flex items-center justify-center">
+      →
+    </div>
+  </button>
+
+  <div id="about-mobile"
+       class="accordion-content overflow-hidden transition-all duration-300">
+    <div class="mt-4 bg-brand-light text-brand-primary p-8 rounded-3xl leading-relaxed">
+      Mit navn er Emma...
+    </div>
   </div>
 
-  <!-- Burger -->
-  <button id="menu-btn" class="md:hidden text-2xl text-brand-primary hover:text-brand-accent">☰</button>
-
-</nav>
-
-<!-- Mobile menu -->
-<div id="mobile-menu" class="hidden flex flex-col rounded-[40px] gap-6 mx-6 md:mx-12 mt-4 px-6 pb-6 py-8 md:hidden font-text text-lg bg-brand-light">
-  <a href="forside.html" class="text-brand-primary">Forside</a>
-  <a href="projekter.html" class="text-brand-primary">Projekter</a>
-  <a href="om-mig.html" class="text-brand-primary font-semibold border-b border-brand-primary pb-1">Om mig</a>
-  <a href="kontakt.html" class="px-6 py-2 rounded-full text-center text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
-        transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.10)]">
-        Kontakt
-    </a>
 </div>
 
+          <!-- NAV -->
+          <div class="lg:col-span-4 hidden lg:flex flex-col gap-6">
+            <!-- ACTIVE -->
+            <button class="about-tab group relative flex items-center justify-between rounded-full px-8 py-5 bg-brand-light backdrop-blur-md border border-white/20 text-brand-primary font-display text-xl transition duration-300 hover:bg-brand-light hover:text-brand-primary hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+              data-target="about">
+              <span>Om mig</span>
 
-<main class="mt-10 md:mt-16 px-6 md:px-12">
+              <div class="arrow absolute right-4 w-10 h-10 rounded-full flex items-center justify-center bg-brand-primary text-brand-light shadow-md transition duration-300 rotate-active group-hover:-translate-y-1 group-hover:-rotate-12">
+                →
+              </div>
+            </button>
 
-<!-- Hero -->
-<section class="pt-10">
+            <!-- INACTIVE -->
+            <button class="about-tab group relative flex items-center justify-between rounded-full px-8 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-brand-light font-display text-xl transition duration-300 hover:bg-brand-light hover:text-brand-primary hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+              data-target="competence">
+              <span>Kompetencer</span>
 
-  <div class="hero-text">
+              <div class="arrow absolute right-4 w-10 h-10 rounded-full flex items-center justify-center bg-brand-primary text-brand-light shadow-md transition duration-300 group-hover:-translate-y-1 group-hover:-rotate-12">
+                →
+              </div>
+            </button>
 
-    <h1 class="font-display
-               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
-               leading-tight
-               text-brand-accent
-               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
-               font-medium">
-        Emma Øhlers Frederiksen
-    </h1>
+            <button class="about-tab group relative flex items-center justify-between rounded-full px-8 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-brand-light font-display text-xl transition duration-300 hover:bg-brand-light hover:text-brand-primary hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+              data-target="approach">
+              <span>Min tilgang</span>
 
-    <h2 class="font-display
-               text-4xl md:text-6xl lg:text-7xl xl:text-9xl
-               leading-[1.1]
-               text-brand-light
-               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
-               font-medium">
-        Webudvikler
-    </h2>
+              <div class="arrow absolute right-4 w-10 h-10 rounded-full flex items-center justify-center bg-brand-primary text-brand-light shadow-md transition duration-300 group-hover:-translate-y-1 group-hover:-rotate-12">
+                →
+              </div>
+            </button>
 
-    <h2 class="font-display
-               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
-               leading-tight
-               text-brand-accent
-               font-medium">
-        Portfolio 2026
-    </h2>
+            <button class="about-tab group relative flex items-center justify-between rounded-full px-8 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-brand-light font-display text-xl transition duration-300 hover:bg-brand-light hover:text-brand-primary hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+              data-target="focus">
+              <span>Fokusområder</span>
 
-  </div>
+              <div class="arrow absolute right-4 w-10 h-10 rounded-full flex items-center justify-center bg-brand-primary text-brand-light shadow-md transition duration-300 group-hover:-translate-y-1 group-hover:-rotate-12">
+                →
+              </div>
+            </button>
+          </div>
 
-</section>
+          <!-- CONTENT -->
+          <div class="lg:col-span-5 hidden lg:block">
+            <div id="about" class="about-panel bg-brand-light text-brand-primary p-8 rounded-3xl leading-relaxed">
+              Mit navn er Emma, og jeg studerer webudvikling på 6. semester på Zealand – Sjællands Erhvervsakademi. 
+              Jeg motiveres af at skabe digitale løsninger, der både er strukturerede, gennemtænkte og brugervenlige. 
+              For mig handler udvikling ikke kun om at få noget til at fungere, men om at forstå, hvordan og hvorfor det fungerer.
+              Jeg er nysgerrig, analytisk og arbejder målrettet med mine projekter. Jeg trives i processen med at optimere, strukturere og
+              forfine detaljer, indtil helheden giver mening. Uden for studiet finder jeg ro og fokus i træning og løb – noget der også afspejler
+              min tilgang til udvikling: kontinuitet, disciplin og ønsket om hele tiden at blive bedre.
+            </div>
+
+            <div id="competence" class="about-panel hidden bg-brand-light text-brand-primary p-8 rounded-3xl leading-relaxed">
+              Jeg arbejder med moderne frontend-teknologier som Vue og React,
+              hvor jeg har fokus på komponentbaseret opbygning, state management
+              og brugeroplevelse. På backend-siden arbejder jeg med Node.js og
+              Express samt PHP, hvor jeg udvikler strukturerede og skalerbare
+              løsninger. Derudover har jeg en stærk interesse for databasedesign
+              og arbejder med relationelle databaser i MySQL. Jeg lægger vægt på
+              korrekt struktur, normalisering og dataintegritet for at sikre
+              stabile og gennemtænkte systemer.
+            </div>
+
+            <div id="approach" class="about-panel hidden bg-brand-light text-brand-primary p-8 rounded-3xl leading-relaxed">
+              Når jeg arbejder med et projekt, har jeg fokus på overblik,
+              kvalitet og en tydelig retning i processen. For mig starter et
+              godt projekt med en gennemtænkt arkitektur og en klar forståelse
+              af problemstillingen. Jeg lægger vægt på, at både kode og database
+              hænger logisk sammen, så løsningen bliver stabil og nem at
+              videreudvikle. Jeg arbejder analytisk og reflekterende og ser
+              optimering som en naturlig del af processen – både teknisk og med
+              brugeren for øje. Brugeren er altid en vigtig del af mine
+              overvejelser, når jeg udvikler noget. Jeg trives både i teams,
+              hvor sparring og fælles refleksion styrker resultatet, og i
+              selvstændigt arbejde, hvor jeg tager ansvar for fremdrift og
+              kvalitet. For mig handler udvikling ikke kun om at få noget til at
+              virke, men om at skabe sammenhæng mellem funktionalitet, teknologi
+              og brugerens behov – og om at forstå helheden fra idé til færdig
+              løsning. Jeg motiveres af at se, hvordan et projekt udvikler sig
+              gennem iteration og refleksion, og hvordan små forbedringer
+              undervejs styrker den samlede løsning.
+            </div>
+
+            <div id="focus" class="about-panel hidden bg-brand-light text-brand-primary p-8 rounded-3xl leading-relaxed">
+              Jeg har en særlig interesse for databasedesign og systemarkitektur
+              og fordyber mig gerne i, hvordan data struktureres og anvendes på
+              en meningsfuld måde. Jeg finder det spændende at arbejde i mellem
+              frontend, backend og database, hvor helheden i systemet bliver
+              tydelig. Fremadrettet ønsker jeg at udvikle mine kompetencer inden
+              for datadrevne løsninger og optimering, hvor analyse og struktur
+              spiller en vigtig rolle.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+
+      const tabs = document.querySelectorAll(".about-tab");
+      const panels = document.querySelectorAll(".about-panel");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => {
+            t.classList.remove(
+              "bg-brand-light",
+              "text-brand-primary",
+              "shadow-md",
+            );
+            t.classList.add("bg-white/10", "text-brand-light");
+
+            const arrow = t.querySelector(".arrow");
+            arrow.classList.remove("rotate-active");
+          });
+
+          panels.forEach((p) => p.classList.add("hidden"));
+
+          tab.classList.remove("bg-white/10", "text-brand-light");
+          tab.classList.add(
+            "bg-brand-light",
+            "text-brand-primary",
+            "shadow-md",
+          );
+
+          const activeArrow = tab.querySelector(".arrow");
+          activeArrow.classList.add("rotate-active");
+
+          document
+            .getElementById(tab.dataset.target)
+            .classList.remove("hidden");
+        });
+      });
 
 
+      const accordionBtns = document.querySelectorAll(".accordion-btn");
 
-</main>
+        accordionBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const content = document.getElementById(btn.dataset.target);
+            const arrow = btn.querySelector(".arrow");
+
+            const isOpen = content.classList.contains("open");
+
+            // Luk alle først
+            document.querySelectorAll(".accordion-content").forEach(c => {
+            c.classList.remove("open");
+            });
+
+            document.querySelectorAll(".accordion-btn .arrow").forEach(a => {
+            a.classList.remove("rotate-open");
+            });
+
+            // Åbn hvis den ikke allerede var åben
+            if (!isOpen) {
+            content.classList.add("open");
+            arrow.classList.add("rotate-open");
+            }
+        });
+        });
 
 
-
-
-
-</body>
-
-<script>
-
-    const btn = document.getElementById("menu-btn");
-    const menu = document.getElementById("mobile-menu");
-
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
-
-
-
-</script>
-
-  
+    </script>
+  </body>
+</html>
