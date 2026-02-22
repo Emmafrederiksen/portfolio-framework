@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    <title>Kontakt | Emma Øhlers Frederiksen </title> 
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+
+    tailwind.config = {
+        theme: {
+            extend: {
+            fontFamily: {
+                display: ['"DM Serif Display"', 'serif'],
+                text: ['"DM Serif Text"', 'serif'],
+            },
+            colors: {
+                brand: {
+                    primary: '#510808',
+                    accent: '#2F0000',
+                    light: '#FFF6E3',
+                    btnStart: '#510808',
+                    btnMid: '#6E0B0B',
+                    btnEnd: '#B71212'
+                }
+            }
+            }
+        }
+    }
+
+    </script>
+
+    <style> @keyframes backgroundMove {
+        0% {
+            background-position: 0% 0%, 100% 100%, 0% 0%;
+        }
+        100% {
+            background-position: 100% 100%, 0% 0%, 0% 0%;
+        }
+    }
+    </style>
+    
+  </head>
+
+<body>
+
+<div class="fixed inset-0 -z-10 
+            bg-[radial-gradient(circle_at_10%_20%,#620909_0%,transparent_50%),radial-gradient(circle_at_50%_80%,#3A0606_0%,transparent_50%),linear-gradient(135deg,#530909_10%,#620909_60%,#3A0606_100%)]
+            bg-[length:300%_300%,300%_300%,200%_200%]
+            animate-[backgroundMove_5s_ease-in-out_infinite_alternate]">
+</div>  
+
+
+<!-- Navbar -->    
+<nav class="flex items-center justify-between mt-6 mx-6 md:mx-12 px-6 py-4 md:py-4 bg-brand-light rounded-[40px] shadow-md">
+
+  <!-- Logo -->
+  <a href="../index.html" class="font-display font-semibold text-2xl md:text-3xl xl:text-4xl text-brand-primary">Portfolio</a>
+
+  <!-- Desktop menu -->
+  <div class="hidden md:flex items-center gap-6 lg:gap-10 font-text text-lg lg:text-xl xl:text-2xl">
+
+    <a href="forside.html" class="text-brand-primary transition">
+        Forside
+    </a>
+
+    <a href="projekter.html" class="text-brand-primary transition">Projekter</a>
+
+    <a href="om-mig.html" class="text-brand-primary transition">Om mig</a>
+
+    <a href="kontakt.html" class="px-4 md:px-6 py-2 rounded-full text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
+        transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.10)]">
+        Kontakt
+    </a>
+
+  </div>
+
+  <!-- Burger -->
+  <button id="menu-btn" class="md:hidden text-2xl text-brand-primary hover:text-brand-accent">☰</button>
+
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden flex flex-col rounded-[40px] gap-6 mx-6 md:mx-12 mt-4 px-6 pb-6 py-8 md:hidden font-text text-lg bg-brand-light">
+  <a href="forside.html" class="text-brand-primary font-medium border-b border-brand-primary pb-1">Forside</a>
+  <a href="projekter.html" class="text-brand-primary">Projekter</a>
+  <a href="om-mig.html" class="text-brand-primary">Om mig</a>
+  <a href="kontakt.html" class="px-6 py-2 rounded-full text-center text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
+        transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.10)]">
+        Kontakt
+    </a>
+</div>
+
+
+<main class="mt-10 md:mt-16 px-6 md:px-12">
+
+<!-- Hero -->
+<section class="pt-10">
+
+  <div class="hero-text">
+
+    <h1 class="font-display
+               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
+               leading-tight
+               text-brand-accent
+               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
+               font-medium">
+        Emma Øhlers Frederiksen
+    </h1>
+
+    <h2 class="font-display
+               text-4xl md:text-6xl lg:text-7xl xl:text-9xl
+               leading-[1.1]
+               text-brand-light
+               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
+               font-medium">
+        Webudvikler
+    </h2>
+
+    <h2 class="font-display
+               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
+               leading-tight
+               text-brand-accent
+               font-medium">
+        Portfolio 2026
+    </h2>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+</body>
+
+<script>
+  
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+
+
+</script>
+
+  
