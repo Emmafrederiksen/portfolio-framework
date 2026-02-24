@@ -50,7 +50,7 @@
     
   </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
 
 <div class="fixed inset-0 -z-10 
             bg-[radial-gradient(circle_at_10%_20%,#620909_0%,transparent_50%),radial-gradient(circle_at_50%_80%,#3A0606_0%,transparent_50%),linear-gradient(135deg,#530909_10%,#620909_60%,#3A0606_100%)]
@@ -68,13 +68,26 @@
   <!-- Desktop menu -->
   <div class="hidden md:flex items-center gap-6 lg:gap-10 font-text text-lg lg:text-xl">
 
-    <a href="forside.html" class="text-brand-primary transition">
-        Forside
-    </a>
+    <a href="forside.html" class="relative text-brand-primary
+          after:absolute after:left-0 after:-bottom-1
+          after:h-[2px] after:w-0
+          after:bg-brand-primary
+          after:transition-all after:duration-300
+          hover:after:w-full">Forside</a>
 
-    <a href="projekter.html" class="text-brand-primary transition">Projekter</a>
+    <a href="projekter.html" class="relative text-brand-primary
+          after:absolute after:left-0 after:-bottom-1
+          after:h-[2px] after:w-0
+          after:bg-brand-primary
+          after:transition-all after:duration-300
+          hover:after:w-full">Projekter</a>
 
-    <a href="om-mig.html" class="text-brand-primary transition">Om mig</a>
+    <a href="om-mig.html" class="relative text-brand-primary
+          after:absolute after:left-0 after:-bottom-1
+          after:h-[2px] after:w-0
+          after:bg-brand-primary
+          after:transition-all after:duration-300
+          hover:after:w-full">Om mig</a>
 
     <a href="kontakt.html" class="px-4 md:px-6 py-2 rounded-full text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
         transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.10)]">
@@ -90,7 +103,7 @@
 
 <!-- Mobile menu -->
 <div id="mobile-menu" class="hidden flex flex-col rounded-[40px] gap-6 mx-6 md:mx-12 mt-4 px-6 pb-6 py-8 md:hidden font-text text-lg bg-brand-light">
-  <a href="forside.html" class="text-brand-primary font-medium border-b border-brand-primary pb-1">Forside</a>
+  <a href="forside.html" class="text-brand-primary">Forside</a>
   <a href="projekter.html" class="text-brand-primary">Projekter</a>
   <a href="om-mig.html" class="text-brand-primary">Om mig</a>
   <a href="kontakt.html" class="px-6 py-2 rounded-full text-center text-brand-light font-text bg-[radial-gradient(circle_at_30%_30%,#510808_0%,#6E0B0B_51%,#B71212_100%)]
@@ -100,38 +113,75 @@
 </div>
 
 
-<main class="mt-10 md:mt-16 px-6 md:px-12">
+<main class="flex-grow mt-10 md:mt-16 px-6 md:px-12">
 
-<!-- Hero -->
 <section class="pt-10">
 
-  <div class="hero-text">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-    <h1 class="font-display
-               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
-               leading-tight
-               text-brand-accent
-               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
-               font-medium">
-        Emma Øhlers Frederiksen
-    </h1>
+    <!-- LEFT: Hero text -->
+    <div class="lg:col-span-7">
 
-    <h2 class="font-display
-               text-4xl md:text-6xl lg:text-7xl xl:text-9xl
-               leading-[1.1]
-               text-brand-light
-               drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)]
-               font-medium">
-        Webudvikler
-    </h2>
+      <h1 class="font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-brand-accent">
+        Kontakt
+      </h1>
 
-    <h2 class="font-display
-               text-3xl md:text-5xl lg:text-6xl xl:text-8xl
-               leading-tight
-               text-brand-accent
-               font-medium">
-        Portfolio 2026
-    </h2>
+      <h2 class="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-brand-light mt-2">
+        Lad os tale sammen
+      </h2>
+
+      <div class="mt-6 max-w-xl">
+        <p class="font-text text-brand-light/90 text-lg leading-relaxed">
+          Har du spørgsmål, samarbejdsideer eller ønsker at høre
+          mere om mit arbejde, er du meget velkommen til at kontakte mig.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Contact info -->
+    <div class="lg:col-span-5 mt-10 lg:mt-0">
+
+      <div class="space-y-10">
+
+        <!-- Email -->
+        <div>
+          <h4 class="font-display text-2xl text-brand-light">
+            Email
+          </h4>
+          <a href="mailto:emmaoef@gmail.com"
+             class="block mt-2 text-brand-light/70 border-b border-white/20 pb-2 hover:text-brand-light transition">
+            emmaoef@gmail.com
+          </a>
+        </div>
+
+        <!-- LinkedIn -->
+        <div>
+          <h4 class="font-display text-2xl text-brand-light">
+            LinkedIn
+          </h4>
+          <a href="https://www.linkedin.com/in/emma-frederiksen-463639234"
+             target="_blank"
+             class="block mt-2 text-brand-light/70 border-b border-white/20 pb-2 hover:text-brand-light transition">
+            linkedin.com/in/emma-frederiksen
+          </a>
+        </div>
+
+        <!-- GitHub -->
+        <div>
+          <h4 class="font-display text-2xl text-brand-light">
+            GitHub
+          </h4>
+          <a href="https://github.com/Emmafrederiksen"
+             target="_blank"
+             class="block mt-2 text-brand-light/70 border-b border-white/20 pb-2 hover:text-brand-light transition">
+            github.com/emmafrederiksen
+          </a>
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -139,6 +189,86 @@
 
 
 </main>
+
+
+
+<!-- Footer -->
+<footer class="mt-24 mx-6 md:mx-12">
+
+  <div class="bg-brand-accent text-brand-light
+              rounded-t-[40px]
+              px-6 md:px-12
+              py-10">
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Venstre -->
+      <div>
+        <ul class="space-y-3 font-display text-2xl">
+          <li>
+            <a href="forside.html"
+               class="hover:opacity-70 transition">
+              Forside
+            </a>
+          </li>
+          <li>
+            <a href="projekter.html"
+               class="hover:opacity-70 transition">
+              Projekter
+            </a>
+          </li>
+          <li>
+            <a href="om-mig.html"
+               class="hover:opacity-70 transition">
+              Om mig
+            </a>
+          </li>
+          <li>
+            <a href="kontakt.html"
+               class="hover:opacity-70 transition">
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Højre -->
+      <div class="md:text-right font-text">
+
+        <div class="space-y-4">
+
+          <div>
+            <p class="text-lg font-medium">Kontakt information</p>
+            <p class="opacity-75">emmaoef@gmail.com</p>
+          </div>
+
+          <div>
+            <p class="text-lg font-medium">Bopæl</p>
+            <p class="opacity-75">Sjælland, Danmark</p>
+          </div>
+
+          <div class="flex md:justify-end gap-6 pt-4">
+            <a href="https://www.linkedin.com/in/emma-frederiksen-463639234"
+               target="_blank"
+               class="hover:opacity-70 transition">
+              LinkedIn
+            </a>
+
+            <a href="https://github.com/Emmafrederiksen"
+               target="_blank"
+               class="hover:opacity-70 transition">
+              GitHub
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</footer>
 
 
 
