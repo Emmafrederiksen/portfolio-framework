@@ -398,8 +398,6 @@ main.container-fluid {
 .card:hover .arrow {
   transform: translateY(-3px) rotate(-25deg);
   box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-  display: grid;
-  gap: 3rem;
 }
 
 /* FOOTER */
@@ -484,6 +482,117 @@ main.container-fluid {
   color: var(--brand-light);
   text-decoration: none;
 }
+
+/* ============================= */
+
+
+/* ============================= */
+/*         PROJECTS PAGE         */
+/* ============================= */
+
+/* Hero section */
+.projects-hero {
+  margin-top: 4rem;
+}
+
+.projects-description {
+  max-width: 600px;
+}
+
+.projects-overline {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  opacity: 0.75;
+  color: var(--brand-light);
+}
+
+.projects-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  color: var(--brand-accent);
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.1),
+    0 8px 20px rgba(0,0,0,0.1);
+}
+
+.projects-description {
+  max-width: 600px;
+  font-size: clamp(1rem, 1.4vw, 1rem);
+  line-height: 1.6;
+  color: var(--brand-light);
+}
+
+/* Grid layout */
+.projects-grid-section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.projects-page-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .projects-page-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Feature card variation */
+.project-card-feature {
+  min-height: 260px;
+  color: var(--brand-light);
+}
+
+.project-card-feature h4,
+.project-card-feature p,
+.project-card-feature .subtitle,
+.project-card-feature .focus,
+.project-card-feature .description {
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .project-card-feature {
+    min-height: 300px;
+  }
+}
+
+/* Card typography */
+.project-card-feature h4 {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.project-card-feature .subtitle {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.project-card-feature .focus {
+  font-style: italic;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.project-card-feature .description {
+  margin-top: auto;
+  line-height: 1.6;
+}
+
+
+/* ============================= */
 
 
 
