@@ -1,41 +1,75 @@
-/* Main indhold */
-
 :root {
     --font-display: 'DM Serif Display', serif;
     --font-text: 'DM Serif Text', serif;
 }
 
-/* ----------------------------------------------------------------------------------- */
+html, body {
+    height: 100%;
+}
 
-
-/* Baggrund med luft, farver og animation */
+/* -------------------- */
+/*      Background      */
+/* -------------------- */
 
 body {
     margin: 0;
-    min-height: 100vh;
     overflow-x: hidden;
 
-    background: 
-        radial-gradient(circle at 10% 20%, #620909 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, #3A0606 0%, transparent 50%),
-        linear-gradient(135deg, #3A0606 10%, #620909 60%, #3A0606 100%);
-        
-    background-blend-mode: screen;
-    background-size: 100% 200%, 200% 200%, 200% 200%;
-    animation: backgroundMove 5s ease-in-out infinite alternate;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(150,0,0,0.4), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(90,0,0,0.4), transparent 60%),
+        linear-gradient(135deg, #3A0606 0%, #620909 50%, #3A0606 100%);
+
+    background-size: 200% 200%;
+    animation: backgroundMove 8s ease-in-out infinite alternate;
 }
 
 @keyframes backgroundMove {
     0% {
-        background-position: 0% 0%, 100% 100%, 0% 0%;
+        background-position: 0% 50%;
     }
     100% {
-        background-position: 100% 100%, 0% 0%, 0% 0%;
+        background-position: 100% 50%;
     }
 }
 
+/* -------------------- */
+/*      Layout          */
+/* -------------------- */
 
-/* ----------------------------------------------------------------------------------- */
+.landing {
+    min-height: 100svh;   /* vigtig */
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .landing {
+        padding: 3.5rem 3rem 5rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .landing {
+        padding: 4rem 4rem 6rem;
+    }
+}
+
+/* -------------------- */
+/*      Hero Top        */
+/* -------------------- */
+
+.hero-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    animation: heroReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
 
 @keyframes heroReveal {
     to {
@@ -44,63 +78,37 @@ body {
     }
 }
 
-.hero-top {
-    opacity: 0;
-    transform: translate(40px);
-    animation: heroReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-delay: 0.2s;
-    text-align: start;
-}
-
-
-.hero-name {
-    font-family: var(--font-display);
-    font-size: clamp(2.1rem, 6vw, 7rem);
-    line-height: 1.2;
-    font-weight: 500;
-    color: #FFF6E3;
-    text-shadow: 
-        0 2px 6px rgba(0, 0, 0, 0.1),
-        0 8px 20px rgba(0, 0, 0, 0.1);
+.hero-top h1,
+.hero-top h2,
+.hero-top p {
+    margin: 0;
 }
 
 .hero-small {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 6rem); /* clamp = (MINIMUM, PREFERRED, MAXIMUM) */
-    font-weight: 500;
+    font-size: clamp(1.8rem, 5vw, 5rem);
+    line-height: 1.2;
     color: #2F0000;
 }
 
-/* ---------------- */
-/*     Landing      */
-/* ---------------- */
-
-.landing {
-    min-height: 100vh;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5.5vw, 6rem);
+    line-height: 1.1;
+    font-weight: 500;
+    color: #FFF6E3;
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.1),
+        0 8px 20px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 768px) {
-    .landing {
-        padding: 3rem 4rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    .landing {
-        padding: 3rem 6rem;
-    }
-}
-
-/* ----------------------------------------------------------------------------------- */
+/* -------------------- */
+/*      Hero Bottom     */
+/* -------------------- */
 
 .hero-bottom {
+    margin-top: 4rem;
     text-align: center;
-    max-width: auto;
-    margin: 3rem auto 4rem auto;
     animation: fadeUp 1.2s ease forwards;
     opacity: 0;
     transform: translateY(20px);
@@ -115,25 +123,26 @@ body {
 
 .hero-description {
     font-family: var(--font-display);
-    font-size: clamp(1.2rem, 3vw, 1.625rem);
-    line-height: 1.6rem;
-    margin: 2rem auto 1.5rem auto;
-    max-width: auto;
-    font-weight: 400;   
-    color:#FFF6E3
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 1.5rem auto 1rem;
+    color: #FFF6E3;
 }
 
 .hero-sub {
     font-family: var(--font-text);
-    font-size: 1.125rem; /* = 18 px */
-    opacity: 0.8;
-    max-width: 800px;
-    color:#FFF6E3
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.90;
+    color: #FFF6E3;
 }
 
-
-
-/* Landingsside knapper */
+/* -------------------- */
+/*      Buttons         */
+/* -------------------- */
 
 .framework-buttons {
     margin-top: 2rem;
@@ -141,13 +150,48 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    font-family: var(--font-text);
 }
 
-@media (max-width: 600px) {
+.framework-buttons .btn {
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: #FFF6E3;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+
+    transition: all 0.3s ease;
+}
+
+.framework-buttons .btn:hover {
+    background: #FFF6E3;
+    color: #3A0606;
+    transform: translateY(-2px);
+}
+
+.framework-buttons .btn:active {
+    transform: translateY(1px);
+}
+
+.divider {
+    color: #FFF6E3;
+    opacity: 0.4;
+}
+
+/* Mobile stacking */
+@media (max-width: 640px) {
     .framework-buttons {
         flex-direction: column;
-        gap: 1rem;
     }
 
     .divider {
@@ -156,66 +200,7 @@ body {
 
     .framework-buttons .btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 260px;
         text-align: center;
     }
 }
-
-
-
-.framework-buttons .btn {
-    text-decoration: none;
-    padding: 0.8rem 2.2rem;
-    border-radius: 999px;
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: #FFF6E3;
-
-    /* Glass effect */
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
-    transition: all 0.3s ease;
-}
-
-.divider {
-    color: #FFF6E3;
-    opacity: 0.5;
-    font-size: 1.6rem;
-}
-
-.framework-buttons .btn:hover {
-    background: #FFF6E3;
-    color: #3A0606;
-
-    border: 1px solid #FFF6E3;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.30);
-
-    transform: translateY(-2px);
-}
-
-.framework-buttons .btn:active {
-    transform: translateY(2px);
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-
-
-/* ----------------------------------------------------------------------------------- */
-
-
-/*  */
-
-
-/* ----------------------------------------------------------------------------------- */
-
